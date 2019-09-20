@@ -65,6 +65,7 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
+    binding.pry
    @title = params[:title]
    @title_ids = params[:figure][:title_ids]
    @landmark = params[:landmark]
