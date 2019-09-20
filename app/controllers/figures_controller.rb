@@ -60,12 +60,10 @@ class FiguresController < ApplicationController
     @figure = Figure.find(params[:id])
     @landmarks = Landmark.all
     @titles = Title.all
-    binding.pry
     erb :"/figures/edit"
   end
 
   patch '/figures/:id' do
-   binding.pry
    @title = params[:title]
    @title_ids = params[:figure][:title_ids]
    @landmark = params[:landmark]
@@ -95,7 +93,6 @@ class FiguresController < ApplicationController
      l = Landmark.create(:name => @landmark[:name])
      @figure.landmarks << l
    end
-   binding.pry
    @figure.save
    redirect to "/figures/#{@figure.id}"
  end
