@@ -65,7 +65,6 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
-    binding.pry
    @title = params[:title]
    @title_ids = params[:figure][:title_ids]
    @landmark = params[:landmark]
@@ -96,6 +95,7 @@ class FiguresController < ApplicationController
      @figure.landmarks << l
    end
    @figure.save
+   binding.pry
    redirect to "/figures/#{@figure.id}"
  end
 
